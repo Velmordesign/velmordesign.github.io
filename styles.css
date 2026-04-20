@@ -187,7 +187,7 @@ a:hover {
 }
 
 .section-title {
-    font-size: clamp(48px, 8vw, 110px);
+    font-size: clamp(48px, 8vw, 92px);
     line-height: 0.9;
     text-align: left;
     margin-bottom: 12px;
@@ -619,7 +619,7 @@ body.menu-open {
 }
 
 .hero-mark {
-    width: clamp(300px, 42vw, 620px) !important;
+    width: clamp(300px, 42vw, 500px) !important;
     max-width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
@@ -632,7 +632,7 @@ body.menu-open {
 }
 
 .hero-title {
-    font-size: clamp(48px, 8vw, 110px);
+    font-size: clamp(48px, 8vw, 82px);
     font-weight: var(--font-weight-bold);
     line-height: 0.9;
     letter-spacing: 0.02em;
@@ -2607,13 +2607,8 @@ body.menu-open {
    LARGE SCREENS
    ============================================ */
 
+/* 1440px–1536px: keep current look */
 @media (min-width: 1440px) {
-    :root {
-        --font-size-5xl: 136px;
-        --font-size-4xl: 88px;
-        --spacing-4xl: 148px;
-    }
-
     .container {
         max-width: 1400px;
     }
@@ -2627,118 +2622,74 @@ body.menu-open {
     }
 }
 
-/* Cap scaling for screens wider than 1536px */
-@media (min-width: 1600px) {
-    :root {
-        --font-size-5xl: 120px;
-        --font-size-4xl: 80px;
-        --font-size-3xl: 48px;
-        --spacing-4xl: 132px;
-    }
-
-    .container {
-        max-width: 1440px;
-    }
-
-    .section-title {
-        font-size: 100px;
-    }
-
-    .hero {
-        max-height: 920px;
-    }
-
-    .hero-title {
-        font-size: 100px;
-        max-width: 800px;
-    }
-
-    .hero-subtitle {
-        font-size: 19px;
-        max-width: 620px;
-    }
-
-    .hero-mark {
-        width: clamp(300px, 36vw, 580px) !important;
-    }
-
-    .hero-form-card {
-        flex: 0 0 400px;
-    }
-
-    .hero-layout {
-        gap: var(--spacing-2xl);
-    }
-
-    .final-cta h2 {
-        font-size: 108px;
-    }
-
-    .service-card h3,
-    .why-us-item h3 {
-        font-size: 30px;
-    }
-
-    .about-content p,
-    .branding-description {
-        font-size: 21px;
-    }
-}
-
-/* Extra-large screens — lock proportions closer to 1536px feel */
-@media (min-width: 1920px) {
+/* 1537px+: freeze proportions to match the 1536px look */
+@media (min-width: 1537px) {
     :root {
         --font-size-5xl: 112px;
-        --font-size-4xl: 74px;
-        --font-size-3xl: 46px;
-        --font-size-2xl: 30px;
+        --font-size-4xl: 72px;
+        --font-size-3xl: 48px;
+        --font-size-2xl: 32px;
         --spacing-4xl: 128px;
-        --spacing-3xl: 88px;
+        --spacing-3xl: 96px;
     }
 
     .container {
-        max-width: 1500px;
+        max-width: 1400px;
     }
 
+    /* Lock section titles */
     .section-title {
-        font-size: 94px;
+        font-size: 88px;
     }
 
-    .hero {
-        max-height: 880px;
+    /* Lock hero to exact 1536px proportions */
+    .hero-mark {
+        width: 460px !important;
     }
 
     .hero-title {
-        font-size: 94px;
-        max-width: 760px;
-    }
-
-    .hero-subtitle {
-        font-size: 18px;
+        font-size: 78px;
         max-width: 600px;
     }
 
-    .hero-mark {
-        width: clamp(260px, 28vw, 540px) !important;
+    .hero-subtitle {
+        font-size: 17px;
+        max-width: 540px;
+    }
+
+    .hero-kicker {
+        font-size: 12px;
     }
 
     .hero-form-card {
-        flex: 0 0 400px;
+        flex: 0 0 360px;
         padding: 34px 28px;
     }
 
-    .final-cta h2 {
-        font-size: 100px;
-        max-width: 860px;
+    .hero-form-title {
+        font-size: 32px;
     }
 
-    .final-cta p {
-        font-size: 20px;
+    .hero-form-desc {
+        font-size: 14px;
     }
 
+    .hero-layout {
+        gap: 48px;
+        padding-right: 0;
+    }
+
+    /* Lock card / item sizes */
     .service-card h3,
     .why-us-item h3 {
         font-size: 28px;
+    }
+
+    .service-card p,
+    .why-us-item p,
+    .feature p,
+    .seo-cms-item p {
+        font-size: 14px;
     }
 
     .about-content p,
@@ -2747,41 +2698,83 @@ body.menu-open {
     }
 
     .kanji-glyph {
-        font-size: 80px;
+        font-size: 76px;
     }
 
     .step-content h3 {
         font-size: 26px;
     }
+
+    .feature h4,
+    .seo-cms-item h3 {
+        font-size: 24px;
+    }
+
+    .portfolio-item h3 {
+        font-size: 28px;
+    }
+
+    /* Lock final CTA */
+    .final-cta h2 {
+        font-size: 92px;
+        max-width: 800px;
+    }
+
+    .final-cta p {
+        font-size: 19px;
+    }
+
+    /* Lock contact hero */
+    .contact-hero h1 {
+        font-size: 110px;
+    }
+
+    .form-wrapper h2 {
+        font-size: 80px;
+    }
+
+    /* Footer */
+    .footer::before {
+        font-size: 140px;
+    }
 }
 
-/* Ultra-wide screens */
-@media (min-width: 2560px) {
-    :root {
-        --font-size-5xl: 108px;
-        --font-size-4xl: 70px;
-        --spacing-4xl: 120px;
-    }
-
+/* 1920px+: same proportions, slightly wider container */
+@media (min-width: 1920px) {
     .container {
-        max-width: 1540px;
+        max-width: 1440px;
     }
 
-    .section-title {
-        font-size: 88px;
+    .hero .container {
+        max-width: 1440px;
     }
 
-    .hero-title {
-        font-size: 88px;
-        max-width: 720px;
+    .hero-layout {
+        gap: 64px;
     }
 
     .hero-mark {
-        width: 500px !important;
+        width: 480px !important;
     }
 
-    .final-cta h2 {
-        font-size: 94px;
+    .hero-title {
+        font-size: 82px;
+        max-width: 640px;
+    }
+
+    .hero-form-card {
+        flex: 0 0 380px;
+    }
+}
+
+/* 2560px+ ultra-wide: keep everything contained */
+@media (min-width: 2560px) {
+    .container {
+        max-width: 1500px;
+    }
+
+    .hero .container {
+        max-width: 1500px;
     }
 }
 
