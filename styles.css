@@ -78,6 +78,7 @@
 html {
     scroll-behavior: smooth;
     background: var(--color-black);
+    overflow-x: auto;
 }
 
 body {
@@ -92,6 +93,8 @@ body {
     font-weight: var(--font-weight-regular);
     overflow-x: hidden;
     position: relative;
+    max-width: 1536px;
+    margin: 0 auto;
 }
 
 body::before {
