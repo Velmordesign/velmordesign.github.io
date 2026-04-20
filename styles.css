@@ -78,7 +78,6 @@
 html {
     scroll-behavior: smooth;
     background: var(--color-black);
-    overflow-x: auto;
 }
 
 body {
@@ -93,8 +92,6 @@ body {
     font-weight: var(--font-weight-regular);
     overflow-x: hidden;
     position: relative;
-    max-width: 1536px;
-    margin: 0 auto;
 }
 
 body::before {
@@ -2627,6 +2624,164 @@ body.menu-open {
 
     .hero-subtitle {
         max-width: 560px;
+    }
+}
+
+/* Cap scaling for screens wider than 1536px */
+@media (min-width: 1600px) {
+    :root {
+        --font-size-5xl: 120px;
+        --font-size-4xl: 80px;
+        --font-size-3xl: 48px;
+        --spacing-4xl: 132px;
+    }
+
+    .container {
+        max-width: 1440px;
+    }
+
+    .section-title {
+        font-size: 100px;
+    }
+
+    .hero {
+        max-height: 920px;
+    }
+
+    .hero-title {
+        font-size: 100px;
+        max-width: 800px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+        max-width: 620px;
+    }
+
+    .hero-mark {
+        width: clamp(300px, 36vw, 580px) !important;
+    }
+
+    .hero-form-card {
+        flex: 0 0 400px;
+    }
+
+    .hero-layout {
+        gap: var(--spacing-2xl);
+    }
+
+    .final-cta h2 {
+        font-size: 108px;
+    }
+
+    .service-card h3,
+    .why-us-item h3 {
+        font-size: 30px;
+    }
+
+    .about-content p,
+    .branding-description {
+        font-size: 21px;
+    }
+}
+
+/* Extra-large screens — lock proportions closer to 1536px feel */
+@media (min-width: 1920px) {
+    :root {
+        --font-size-5xl: 112px;
+        --font-size-4xl: 74px;
+        --font-size-3xl: 46px;
+        --font-size-2xl: 30px;
+        --spacing-4xl: 128px;
+        --spacing-3xl: 88px;
+    }
+
+    .container {
+        max-width: 1500px;
+    }
+
+    .section-title {
+        font-size: 94px;
+    }
+
+    .hero {
+        max-height: 880px;
+    }
+
+    .hero-title {
+        font-size: 94px;
+        max-width: 760px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        max-width: 600px;
+    }
+
+    .hero-mark {
+        width: clamp(260px, 28vw, 540px) !important;
+    }
+
+    .hero-form-card {
+        flex: 0 0 400px;
+        padding: 34px 28px;
+    }
+
+    .final-cta h2 {
+        font-size: 100px;
+        max-width: 860px;
+    }
+
+    .final-cta p {
+        font-size: 20px;
+    }
+
+    .service-card h3,
+    .why-us-item h3 {
+        font-size: 28px;
+    }
+
+    .about-content p,
+    .branding-description {
+        font-size: 20px;
+    }
+
+    .kanji-glyph {
+        font-size: 80px;
+    }
+
+    .step-content h3 {
+        font-size: 26px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 2560px) {
+    :root {
+        --font-size-5xl: 108px;
+        --font-size-4xl: 70px;
+        --spacing-4xl: 120px;
+    }
+
+    .container {
+        max-width: 1540px;
+    }
+
+    .section-title {
+        font-size: 88px;
+    }
+
+    .hero-title {
+        font-size: 88px;
+        max-width: 720px;
+    }
+
+    .hero-mark {
+        width: 500px !important;
+    }
+
+    .final-cta h2 {
+        font-size: 94px;
     }
 }
 
